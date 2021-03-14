@@ -1,4 +1,4 @@
-package com.cgg.random;
+package com.changgg.algorithm.base.random;
 
 import java.util.ArrayList;
 

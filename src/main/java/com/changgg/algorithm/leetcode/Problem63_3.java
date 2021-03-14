@@ -1,4 +1,4 @@
-package com.cgg.leetcode;
+package com.changgg.algorithm.leetcode;
 
 /**
  * @Author cgg 891842749@qq.com

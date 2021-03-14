@@ -1,4 +1,4 @@
-package com.cgg.leetcode;
+package com.changgg.algorithm.leetcode;
 
 class ListNode {
     int val;

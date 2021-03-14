@@ -1,4 +1,4 @@
-package com.cgg.leetcode;
+package com.changgg.algorithm.leetcode;
 
 import java.util.Arrays;
 
@@ -46,7 +46,7 @@ public class Problem338 {
     }
 
     public static void main(String[] args) {
-        com.cgg.leetcode.Problem338 problem338 = new com.cgg.leetcode.Problem338();
+        com.changgg.algorithm.leetcode.Problem338 problem338 = new com.changgg.algorithm.leetcode.Problem338();
         System.out.println(Arrays.toString(problem338.countBits(8)));
 
     }

@@ -1,4 +1,4 @@
-package com.cgg.writtenexamination;
+package com.changgg.algorithm.others;
 
 import java.util.LinkedList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.cgg.writtenexamination;
+package com.changgg.algorithm.others;
 
 import java.util.Arrays;
 import java.util.Comparator;
