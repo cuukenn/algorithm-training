@@ -1,7 +1,5 @@
 package com.changgg.algorithm.leetcode.weekly.single;
 
-import java.util.*;
-
 /**
  * @author changgg
  * @Classname Problem5716
@@ -11,95 +9,51 @@ import java.util.*;
  * @link https://gitee.com/cgggitee
  */
 public class Problem5716 {
-    //TODO 未完成
+    /**
+     * X=3^n1
+     * X=3^n1*2
+     * X=3^n1*2*2
+     *
+     * @param primeFactors
+     * @return
+     */
     public int maxNiceDivisors(int primeFactors) {
-        int num = 0;
-        Set<Integer> rs = new HashSet<>();
-        while (true) {
-            num++;
-            List<List<Integer>> num1 = getNum1(num);
-            if (!num1.isEmpty()) {
-                List<Integer> num2 = getNum2(num1.get(0));
-                if (num2.size() == primeFactors) {
-                    for (List<Integer> nv : num1) {
-                        int tmp1 = nv.get(0);
-                        boolean tmp1Can = true;
-                        for (Integer v : num2) {
-                            if ((tmp1 / v) * v == tmp1) {
-                                tmp1Can = false;
-                                break;
-                            }
-                        }
-                        if (tmp1Can) {
-                            rs.add(tmp1);
-                        }
-                        tmp1 = nv.get(1);
-                        tmp1Can = true;
-                        for (Integer v : num2) {
-                            if ((tmp1 / v) * v == tmp1) {
-                                tmp1Can = false;
-                                break;
-                            }
-                        }
-                        if (tmp1Can) {
-                            rs.add(tmp1);
-                        }
-                    }
-                    break;
-                }
-            }
+        int mod = 1000000007;
+        if (primeFactors <= 4) {
+            return primeFactors;
+        } else if (primeFactors % 3 == 0) {
+            return (int) (quickPow(3, primeFactors / 3) % mod);
+        } else if ((primeFactors) % 3 == 2) {
+            return (int) (quickPow(3, (primeFactors - 2) / 3) * 2 % mod);
+        } else {
+            return (int) (quickPow(3, (primeFactors - 4) / 3) * 4 % mod);
         }
-        return rs.size();
     }
 
-    private List<List<Integer>> getNum1(int num) {
-        final int mid = num >> 1;
-        List<List<Integer>> rs = new ArrayList<>();
-        for (int index = 2; index <= num; index++) {
-            int tmp = num / index;
-            if (tmp < index) {
-                break;
+    private long quickPow(long base, long time) {
+        final int mod = 1000000007;
+        long rs = 1L;
+        while (time != 0) {
+            if ((time & 1) == 1) {
+                rs = rs * base % mod;
             }
-            if (tmp * index == num) {
-                rs.add(Arrays.asList(index, tmp));
-            }
-        }
-        return rs;
-    }
-
-    private List<Integer> getNum2(List<Integer> num1) {
-        int v1 = num1.get(0);
-        List<Integer> rs = new ArrayList<>();
-        if (v1 % 2 == 0 || v1 % 3 == 0 || v1 % 5 == 0 || v1 % 7 == 0) {
-            List<List<Integer>> num11 = getNum1(v1);
-            if (num11.size() > 0) {
-                rs.addAll(getNum2(num11.get(0)));
-            } else {
-                rs.add(v1);
-            }
-        } else {
-            rs.add(v1);
-        }
-        int v2 = num1.get(1);
-        if (v2 % 2 == 0 || v2 % 3 == 0 || v2 % 5 == 0 || v2 % 7 == 0) {
-            List<List<Integer>> num11 = getNum1(v2);
-            if (num11.size() > 0) {
-                rs.addAll(getNum2(num11.get(0)));
-            } else {
-                rs.add(v2);
-            }
-        } else {
-            rs.add(v2);
+            base = base * base % mod;
+            time = time >> 1;
         }
         return rs;
     }
 
     public static void main(String[] args) {
         Problem5716 problem5716 = new Problem5716();
+        System.out.println(problem5716.quickPow(3, 0));
+        System.out.println(problem5716.quickPow(3, 1));
+        System.out.println(problem5716.quickPow(3, 2));
+        System.out.println(problem5716.quickPow(3, 3));
+        System.out.println(problem5716.quickPow(3, 4));
+
         System.out.println(problem5716.maxNiceDivisors(5));
         System.out.println(problem5716.maxNiceDivisors(8));
-
-        System.out.println(problem5716.getNum1(12));
-        System.out.println(problem5716.getNum2(problem5716.getNum1(12).get(0)));
+        System.out.println(problem5716.maxNiceDivisors(73));
+        System.out.println(problem5716.maxNiceDivisors(545918790));
     }
 }
