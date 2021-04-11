@@ -8,15 +8,15 @@ package com.changgg.algorithm.leetcode.daily;
  */
 public class Problem263 {
     public boolean isUgly(int n) {
-        if (n < 2) {
-            return false;
-        }
         return isUglyP(n);
     }
 
     private boolean isUglyP(int n) {
         if (n == 1) {
             return true;
+        }
+        if (n == 0) {
+            return false;
         }
         if (n % 2 == 0) {
             return isUglyP(n / 2);
