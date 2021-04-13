@@ -43,7 +43,7 @@ public class Problem173 {
         }
     }
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
