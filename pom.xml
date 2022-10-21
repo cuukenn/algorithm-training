@@ -2,15 +2,78 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.changgg.algorithm</groupId>
-    <artifactId>algorithm</artifactId>
-    <version>1.0.0</version>
-    <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-    </properties>
-
-
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.cuukenn</groupId>
+  <artifactId>algorithm-training</artifactId>
+  <version>1.0.0</version>
+  <name>${artifactId}</name>
+  <description>个人算法练习项目</description>
+  <properties>
+    <!-- *************************maven基础配置*************************************-->
+    <maven.compile.fork>true</maven.compile.fork>
+    <!--maven编译的JDK版本和编码字符集-->
+    <java.version>1.8</java.version>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+  </properties>
+  <licenses>
+    <license>
+      <name>The MIT License (MIT)</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>cuukenn</id>
+      <name>cuukenn</name>
+      <email>cgg244@qq.com</email>
+      <url>https://github.com/cuukenn</url>
+      <timezone>+8</timezone>
+      <roles>
+        <role>Architect</role>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:cuukenn/algorithm-training.git</connection>
+    <developerConnection>scm:git:git@github.com:cuukenn/algorithm-training.git</developerConnection>
+    <url>https://github.com/cuukenn/algorithm-training</url>
+  </scm>
+  <issueManagement>
+    <system>Github Issue</system>
+    <url>https://github.com/cuukenn/liquibase-extension/issues</url>
+  </issueManagement>
+  <!--设置远程仓库地址为阿里云仓库-->
+  <repositories>
+    <repository>
+      <id>maven-ali</id>
+      <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>maven-ali</id>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
