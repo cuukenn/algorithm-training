@@ -6,7 +6,7 @@
   <groupId>io.github.cuukenn</groupId>
   <artifactId>algorithm-training</artifactId>
   <version>1.0.0</version>
-  <name>${artifactId}</name>
+  <name>${project.artifactId}</name>
   <description>个人算法练习项目</description>
   <properties>
     <!-- *************************maven基础配置*************************************-->
